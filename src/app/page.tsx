@@ -12,14 +12,14 @@ export default function Home() {
       imageAlt: "learn forex",
       title: "Forex Mastery Course", 
       description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence.", 
-      buttonText: "Enrol",
+      buttonText: "Enroll",
       path: "https://paystack.com/pay/accesscourses" 
     },
     {
       imagePath: "/images/chart.jpg",
       imageAlt: "learn forex",
       title: "PCA NoteBook", 
-      description: "Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your knowledge in the forex market.", 
+      description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your knowledge in the forex market.`, 
       buttonText: "Buy Now",
       path: "https://paystack.com/pay/materialsaccess" 
   },
@@ -44,7 +44,7 @@ export default function Home() {
       <div className="flex space-x-6">
       {cardContent.map((item, idx) => (
       
-        <Card imageAlt={item.imageAlt} imagePath={item.imagePath} title={item.title} description={item.description} buttonText={item.buttonText} path={item.path} />
+        <Card key={idx} imageAlt={item.imageAlt} imagePath={item.imagePath} title={item.title} description={item.description} buttonText={item.buttonText} path={item.path} />
       ))}
     </div>
     
