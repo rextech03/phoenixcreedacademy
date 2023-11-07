@@ -41,7 +41,7 @@ export default function Home() {
 
       <h2 className="text-black text-3xl text-center py-4 font-bold">Online Courses</h2>
       
-      <div className="flex space-x-6">
+      <div className="sm:space-y-6 md:flex md:space-x-6">
       {cardContent.map((item, idx) => (
       
         <Card key={idx} imageAlt={item.imageAlt} imagePath={item.imagePath} title={item.title} description={item.description} buttonText={item.buttonText} path={item.path} />
