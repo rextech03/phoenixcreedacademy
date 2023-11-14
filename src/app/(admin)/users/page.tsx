@@ -1,10 +1,11 @@
+
 import React from 'react'
 
 async function getUsers() {
-    const res = await fetch( `${process.env.BASE_URL}/api/getUsers` )
-    if (!res.ok) {
-        console.log(res)
-    }
+    const res = await fetch( `http://localhost:3000/api/users`, {
+       next: { revalidate: 3 } 
+    })
+   
     return res.json()
 }
 
@@ -16,3 +17,5 @@ export default async function page() {
     <div>page</div>
   )
 }
+
+
