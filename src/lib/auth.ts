@@ -1,3 +1,4 @@
+
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import  PrismaClient  from "../../prisma/client"
@@ -20,7 +21,7 @@ export const { handlers, auth } = NextAuth({
         email: { label: "Email", type: "email", placeholder: "jsmith" },
         password: {  label: "Password", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials: any) {
         if (!credentials?.email || credentials?.password  ) {
           return null;
         }
@@ -34,7 +35,7 @@ export const { handlers, auth } = NextAuth({
           return null;
         }
 
-        const passwordMatch = await compare(credentials?.password || '', existingUser.password);
+        const passwordMatch =  compare(credentials.password || '', existingUser?.password || '');
        
         if (!passwordMatch) {
           return null;
